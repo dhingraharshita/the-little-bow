@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="The Little Bow">
+  <rect width="32" height="32" fill="#F6F0E8"/>
+  <path d="M10 13c-3-4 1-7 6-4 5-3 9 0 6 4 2 3-2 5-6 6-4-1-8-3-6-6z" fill="#7A2433"/>
+  <circle cx="16" cy="15" r="1.6" fill="#B8943F"/>
+</svg>
