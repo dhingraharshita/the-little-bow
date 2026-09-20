@@ -8,30 +8,48 @@ export default function ProductCard({ product }) {
   return (
     <article className="flex h-full flex-col border border-beige bg-ivory">
       <Link href={`/shop/${product.slug}`} className="block">
-        <ProductImage src={product.image} alt={product.name} className="aspect-[4/5]" />
+        <ProductImage
+          src={product.image}
+          alt={product.name}
+          className="aspect-[4/5]"
+        />
       </Link>
+
       <div className="flex flex-1 flex-col p-4">
         <p className="text-[11px] tracking-[0.18em] text-burgundy uppercase">
           {category?.shortName || product.category}
         </p>
+
         <h3 className="serif mt-2 text-xl leading-snug text-ink">
-          <Link href={`/shop/${product.slug}`} className="hover:text-burgundy">
+          <Link
+            href={`/shop/${product.slug}`}
+            className="hover:text-burgundy"
+          >
             {product.name}
           </Link>
         </h3>
-        <p className="mt-2 text-sm text-ink/70">{product.price}</p>
+
+        <p className="mt-2 text-sm text-ink/70">
+          {product.price}
+        </p>
+
         <div className="mt-auto flex flex-col gap-2 pt-5 sm:flex-row">
+          {/* VIEW DETAILS */}
           <Link
             href={`/shop/${product.slug}`}
-            className="flex-1 border border-ink px-3 py-2.5 text-center text-[11px] tracking-[0.16em] uppercase hover:bg-ink hover:text-ivory"
+            className="flex-1 border border-ink px-3 py-2.5 text-center text-[11px] tracking-[0.16em] uppercase hover:bg-ink hover:text-white"
           >
-            View Details
+            VIEW DETAILS
           </Link>
+
+          {/* ORDER NOW */}
           <Link
-            href={`/contact?product=${product.slug}`}
-            className="flex-1 bg-burgundy px-3 py-2.5 text-center text-[11px] tracking-[0.16em] text-ivory uppercase hover:bg-wine"
+            href={`/contact?product=${encodeURIComponent(
+              product.name
+            )}&price=${encodeURIComponent(product.price)}`}
+            className="flex-1 border border-burgundy bg-burgundy px-3 py-2.5 text-center text-[11px] tracking-[0.16em] text-white uppercase hover:opacity-90"
           >
-            Order Now
+            ORDER NOW
           </Link>
         </div>
       </div>
